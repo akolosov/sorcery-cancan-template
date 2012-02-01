@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login, :only => [:index, :new, :create, :activate]
-# , :except => [:not_authenticated]
   load_and_authorize_resource
 
   # GET /users
