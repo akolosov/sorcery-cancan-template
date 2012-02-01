@@ -10,15 +10,7 @@
     $ cd ~/Projects/NewProjectName
     $ vi ./preprocess.it  # Меняем строки "SorceryCancanTemplate" на "NewProjectName" и "sorcery_cancan_template" на "new_project_name". Сохраняем и выходим из vi.
     $ ./preprocess.sh  # Производим подготовку шаблона
-    $ bundle install  # Подготавливаем нужные gem'ы и зависимости
-    $ rm -rf ./.git  # Удаляем упоминание о старом репозитарии с шаблоном и ...
-    $ git init  # ... создаем новый репозитарий для нового приложения
-    $ git add .  # Добавляем в репозитарий все файлы
-    $ git commit -a -m "Initial commit"  # Делаем первичный коммит
-    $ ..
-    $ rake db:migrate  # Создаем базу данных
-    $ rake db:seed  # Заполняем ее начальными данными
-    $ rails s  # Проверяем работоспособность сервера Rails
+    $ rails s  # Проверяем работоспособность приложения Rails
 
 
 Для входа администратором и пользователем используем соответственно:
