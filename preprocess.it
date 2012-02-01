@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+replaces = {
+  '{programName}' => "SorceryCancanTemplate",
+  '{program_name}' =>  "sorcery_cancan_template"
+}
+
+ARGV.each do |arg|
+  str = File.open(arg, 'r').read
+  print "+ Processing "+arg+" - "
+  replaces.each do |key, value|
+    str.gsub!(key, value)
+  end
+  File.open(arg, 'w').puts(str)
+  puts " done!"
+end
