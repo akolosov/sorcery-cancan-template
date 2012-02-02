@@ -6,12 +6,11 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    if user.role? :admin
+    if user.is? :admin
       can :manage, :all
-    elsif user.role? :user
+    elsif user.is? :user
       can :manage, User, :id => user.id
-      can :read, :all
-    else
+    else # guest
       can :read, :all
     end
 
