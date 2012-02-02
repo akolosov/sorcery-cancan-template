@@ -8,8 +8,11 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
-    else
+    elsif user.role? :user
       can :manage, User, :id => user.id
+      can :read, :all
+    else
+      can :read, :all
     end
 
     # The first argument to `can` is the action you are giving the user permission to do.

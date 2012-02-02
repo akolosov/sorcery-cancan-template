@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :only => [:index, :new, :create, :activate]
+  skip_before_filter :require_login, :only => [ :new, :create, :activate]
+
   load_and_authorize_resource
+  skip_authorize_resource :only => [ :new, :create, :activate ]
 
   # GET /users
   # GET /users.xml
@@ -45,6 +47,7 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @user.roles = 'user'
 
     respond_to do |format|
       if @user.save
