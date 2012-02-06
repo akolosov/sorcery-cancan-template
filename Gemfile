@@ -6,21 +6,17 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'sorcery', '0.7.6'
 
-gem 'therubyracer'
-
 gem 'cancan'
 
 gem 'jquery-rails'
 
 group :assets do
+  gem 'therubyracer'
   gem 'uglifier'
 end
 
-group :development do
-  gem 'ruby-debug19', :require => 'ruby-debug'
-end
-
 group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem "test-unit"
   gem "rspec"
   gem 'rspec-rails'

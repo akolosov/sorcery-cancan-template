@@ -12,15 +12,15 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
-    <td><% if can? :read, User %>
-      <%= link_to 'Show', user %>
-    <% end %></td>
-    <td><% if can? :update, User %>
-      <%= link_to 'Edit', edit_user_path(user) %>
-    <% end %></td>
-    <td><% if can? :destroy, User %>
-      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %></td>
+    <td>
+      <%= link_to 'Show', user if can? :read, User %>
+    </td>
+    <td>
+      <%= link_to 'Edit', edit_user_path(user) if can? :update, User %>
+    </td>
+    <td>
+      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete if can? :destroy, User %>
+    </td>
   </tr>
 <% end %>
 </table>
