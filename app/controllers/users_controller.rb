@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :only => [ :new, :create, :activate]
+  skip_before_filter :require_login, :only => [ :show, :index, :new, :create, :activate]
 
   load_and_authorize_resource
   skip_authorize_resource :only => [ :new, :create, :activate ]
