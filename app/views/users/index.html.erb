@@ -3,19 +3,19 @@
 <p id="alert"><%= alert %></p>
 <table class="table table-striped table-bordered table-condensed">
   <tr>
-    <th>User</th>
-    <th>Actions</th>
+    <th class="span6">User</th>
+    <th class="span3">Actions</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
     <td>
-      <%= link_to 'Show', user if can? :read, User %>
+      <%= link_to 'Show', user, :class => 'btn btn-info' if can? :read, User %>
       &nbsp;
-      <%= link_to 'Edit', edit_user_path(user) if can? :update, User %>
+      <%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-primary' if can? :update, User %>
       &nbsp;
-      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete if can? :destroy, User %>
+      <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger' if can? :destroy, User %>
     </td>
   </tr>
 <% end %>
