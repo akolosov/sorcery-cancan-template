@@ -10,6 +10,8 @@ gem 'cancan'
 
 gem 'jquery-rails'
 
+gem 'twitter-bootstrap-rails'
+
 group :assets do
   gem 'therubyracer'
   gem 'uglifier'
