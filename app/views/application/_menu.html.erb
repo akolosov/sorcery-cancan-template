@@ -1,0 +1,8 @@
+<% if current_user %>
+  <li><%= link_to "Edit Profile", edit_user_path(current_user.id) if can? :manage, current_user %></li>
+  <li><%= link_to "Logout", :logout %></li>
+<% else %>
+  <li><%= link_to "Register", new_user_path %></li>
+  <li><%= link_to "Login", :login %></li>
+<% end %>
+
