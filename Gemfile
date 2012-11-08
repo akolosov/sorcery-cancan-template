@@ -18,6 +18,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'rb-readline'
 
+gem 'simple_form'
+
 group :assets do
   gem 'therubyracer'
   gem 'uglifier'

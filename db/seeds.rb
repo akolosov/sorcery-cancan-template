@@ -13,7 +13,7 @@ admin = User.create :username => 'admin', :email => 'admin@test.com', :password 
 admin.save
 admin.add_role :admin
 
-user = User.create :username => 'test', :email => 'user@test.com', :password => 'user', :password_confirmation => 'user'
+user = User.create :username => 'user', :email => 'user@test.com', :password => 'user', :password_confirmation => 'user'
 user.save
 user.add_role :user
 
