@@ -22,7 +22,7 @@ Rails.application.config.sorcery.configure do |config|
 #  config.facebook.user_info_mapping = {:email => "name"}  # if enabled external providers submodule
   
   config.user_config do |user|
-    user.username_attribute_names                      = [:email]
+    user.username_attribute_names                      = [:email, :username, :id]
     user.subclasses_inherit_config                    = true
 
 #    user.user_activation_mailer                       = UserMailer  # if enabled user_activation submodule

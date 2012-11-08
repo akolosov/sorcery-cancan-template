@@ -6,14 +6,17 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-admin = User.create  :email => 'admin@test.com', :password => 'admin', :password_confirmation => 'admin'
-admin.roles = 'admin'
+
+Role.create([ { :name => 'admin' }, { :name => 'user' } ], :without_protection => true)
+
+admin = User.create :username => 'admin', :email => 'admin@test.com', :password => 'admin', :password_confirmation => 'admin'
 admin.save
+admin.add_role :admin
 
-user = User.create  :email => 'user@test.com', :password => 'user', :password_confirmation => 'user'
-user.roles = 'user'
+user = User.create :username => 'test', :email => 'user@test.com', :password => 'user', :password_confirmation => 'user'
 user.save
+user.add_role :user
 
-test = User.create  :email => 'test@test.com', :password => 'test', :password_confirmation => 'test'
-test.roles = 'user'
+test = User.create :username => 'test', :email => 'test@test.com', :password => 'test', :password_confirmation => 'test'
 test.save
+test.add_role :user

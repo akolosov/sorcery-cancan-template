@@ -10,6 +10,8 @@ gem 'sorcery'
 
 gem 'cancan'
 
+gem 'rolify'
+
 gem 'jquery-rails'
 
 gem 'twitter-bootstrap-rails'
