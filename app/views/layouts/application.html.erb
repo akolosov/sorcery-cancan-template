@@ -32,10 +32,10 @@
   </head>
 
   <body>
-    <!-- Barra superior -->
     <%= render :partial => 'common/header' %>
     <div class="container-fluid">
       <div class="row-fluid">
+      <% if current_user %>
         <!-- Menu Izquierdo -->
          <%= render :partial => 'common/menu' %>
         <!-- Yield -->
@@ -44,7 +44,17 @@
           <div class="hero-unit">
             <%= yield %>
           </div>
-    </div><!--/.fluid-container-->
+       </div>
+      <% else %> 
+       <div class="span12">
+          <%= render :partial => 'common/flashes' %>
+          <div class="hero-unit">
+            <%= yield %>
+          </div>
+       </div>
+      <% end %>
+     </div><!--/.row-fluid -->
+    </div><!--/.fluid-container -->
     <!-- Footer -->
     <%= render :partial => 'common/footer' %>
     <!-- Le javascript
