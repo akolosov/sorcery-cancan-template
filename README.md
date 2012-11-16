@@ -17,7 +17,7 @@
 
     E-Mail: admin@test.com, Username: admin, ID: 1, Password: admin
     E-Mail: user@test.com, Username: user, ID: 2, Password: user
-    E-Mail: test@test.com, Username: test, ID: 3, Password: user
+    E-Mail: test@test.com, Username: test, ID: 3, Password: test
 
 
 # License
